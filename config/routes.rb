@@ -1,4 +1,6 @@
 Ezuser::Application.routes.draw do
+  resources :sessions, :only => [:new, :create] 
+
   get "welcome/index"
 
   resources :users

@@ -33,6 +33,12 @@ describe UsersController do
   end
 
   describe "GET edit" do
+    
+    before(:each) do
+      @user = Factory(:user)
+      session[:user_id] = @user.id
+    end
+    
     it "assigns the requested user as @user" do
       User.stub(:find).with("37") { mock_user }
       get :edit, :id => "37"
@@ -72,7 +78,12 @@ describe UsersController do
 
   end
 
-  describe "PUT update" do
+  describe "PUT update, with login" do
+    
+    before(:each) do
+      @user = Factory(:user)
+      session[:user_id] = @user.id
+    end
 
     describe "with valid params" do
       it "updates the requested user" do
@@ -107,11 +118,23 @@ describe UsersController do
         response.should render_template("edit")
       end
     end
-    
-    describe "login user can edit profile" do
-      pending "user login session need!!!"
-    end
 
+  end
+  
+  describe "PUT update, without login" do
+    before(:each) do
+      @user = Factory(:user)
+    end
+    
+    it "edit" do
+      get :edit, :id => @user.id 
+      response.should redirect_to(new_session_path)
+    end
+    
+    it "update" do
+      put :update, :id => @user.id 
+      response.should redirect_to(new_session_path)
+    end
   end
 
   describe "DELETE destroy" do

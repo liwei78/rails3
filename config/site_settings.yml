@@ -1,0 +1,14 @@
+common: &common
+  keywords: "EZUser on Rails3"
+  description: "on dev"
+  author: "Rique Li, hi@liwei.me"
+  site_title: "EZUser on dev"
+  
+development:
+  <<: *common
+
+test:
+  <<: *common  
+
+production:
+  site_title: "EZUser on pro"

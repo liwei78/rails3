@@ -1,0 +1,4 @@
+= form_tag(sessions_path) do
+  = text_field(:user, :login)
+  = password_field(:user, :password)
+  = submit_tag("login")

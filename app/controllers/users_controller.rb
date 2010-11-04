@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  before_filter :login_required, :only => [:edit, :update]
+  
   # GET /users
   # GET /users.xml
   def index
