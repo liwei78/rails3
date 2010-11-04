@@ -1,0 +1,3 @@
+1. user login test
+2. load user's fixtures with visual attributes
+3. login avoid login_required 
