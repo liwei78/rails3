@@ -107,6 +107,10 @@ describe UsersController do
         response.should render_template("edit")
       end
     end
+    
+    describe "login user can edit profile" do
+      pending "user login session need!!!"
+    end
 
   end
 
