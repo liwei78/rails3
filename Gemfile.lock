@@ -32,6 +32,8 @@ GEM
       activesupport (~> 3.0.0)
     awesome_print (0.2.1)
     builder (2.1.2)
+    ckeditor (3.4.2.pre)
+      mime-types (>= 1.16)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -53,6 +55,9 @@ GEM
       treetop (>= 1.4.5)
     mime-types (1.16)
     nokogiri (1.4.3.1)
+    paperclip (2.3.5)
+      activerecord
+      activesupport
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -102,6 +107,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  ckeditor (= 3.4.2.pre)
   factory_girl_rails
   faker
   gravatar_image_tag
@@ -109,6 +115,7 @@ DEPENDENCIES
   haml
   hirb
   jquery-rails
+  paperclip
   rails (= 3.0.0)
   rspec
   rspec-rails

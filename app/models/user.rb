@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :email, :name, :password, :password_confirmation
   
+  has_many :pads
+  has_many :contents
+  
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
   validates :email, 
@@ -30,6 +33,24 @@ class User < ActiveRecord::Base
   
   def right_password?(password)
     encrypted_password == encrypt(password)
+  end
+  
+  def init_categories
+    Category.create([
+        {:user_id => self.id, :name => "c"},
+        {:user_id => self.id, :name => "c++"},
+        {:user_id => self.id, :name => "css"},
+        {:user_id => self.id, :name => "haml"},
+        {:user_id => self.id, :name => "html"},
+        {:user_id => self.id, :name => "js"},
+        {:user_id => self.id, :name => "jquery"},
+        {:user_id => self.id, :name => "objective-c"},
+        {:user_id => self.id, :name => "rails"},
+        {:user_id => self.id, :name => "ruby"},
+        {:user_id => self.id, :name => "python"},
+        {:user_id => self.id, :name => "django"},
+        {:user_id => self.id, :name => "other"}
+      ])
   end
   
   private

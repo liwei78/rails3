@@ -1,0 +1,249 @@
+$blue_text:    #0073EA;
+$pink_text:    #FF0084;
+$red_text:     #CC0000;
+$dark_text:    #444444;
+$page_text:    #333333; // page text color
+$border_color: #DDDDDD;
+
+.grey  {color: grey;}
+.green {color: green;}
+.red   {color: red;}
+
+
+body { 
+  color: $page_text; 
+  padding: 20px; 
+}
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  text-decoration: none; 
+}
+
+img {border: 0;}
+
+h1,h2,h3 {
+  color: $pink_text;
+  a {
+    color: $pink_text !important; 
+    text-decoration: underline;
+  }
+}
+
+/*common style*/
+.fs-10        {font-size: 10px;}
+.fs-12        {font-size: 12px;}
+.fs-14        {font-size: 14px;}
+.right        {float: right;}
+.left         {float: left;}
+.text-right   {text-align: right;}
+.text-left    {text-align: left;}
+.text-center  {text-align: center;}
+.clearfix     {clear: both;}
+.small        {font-size: 10px;}
+.normal-font  {font-weight: normal;}
+
+/*more define*/
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.notice {
+  color: green;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+
+}
+
+.wrap {width: 1000px; margin: 0 auto;}
+
+.nav {
+  ul{
+    margin: 0;
+    padding: 0.2em 0.2em 0;
+    display: block;
+    list-style: none outside none;
+    outline: 0 none;
+    border-bottom: 1px solid $border_color;
+    li {
+      float: left;
+      margin: 0 0.2em 1px 0;
+      padding: 0;
+      position: relative;
+      top: 1px;
+      white-space: nowrap;
+      border: 1px solid $border_color;
+      font-weight: bold;
+      color: $blue_text;
+      list-style: none outside none;
+      border-bottom: 0 none !important;
+    }
+    li.logo{
+      margin-right: 60px;
+      border: 0 none;
+      a {
+        color: $blue_text;
+      }
+      a:hover {
+        background-color: #FFFFFF;
+        color: $blue-text !important;
+      }
+      a:visited {
+        color: $blue_text;
+      }
+    }
+    li.button {
+      border: 0 none;
+      margin-left: 20px;
+      a {
+        color: $dark_text !important;
+        font-size: 12px;
+      }
+      a:hover {
+        background-color: #ffffff;
+      }
+    }
+    li.select {
+      margin-bottom: 0;
+      padding-bottom: 1px;
+      background-color: #ffffff;
+      border-bottom: 0 none !important;
+      a {
+        color: $pink_text !important;
+        background-color: #FFFFFF;
+      }
+    }
+    a {
+      text-decoration: none;
+      font-size: 100%;
+      line-height: 1.3;
+      color: $blue_text;
+      float: left;
+      padding: 0.5em 1em;
+    }
+    a:hover {
+      background-color: $blue_text;
+      color: #FFFFFF !important;
+    }
+    a:visited {
+      color: $blue_text;
+    }
+  }
+  
+}
+
+.pad {
+  $show_width:  870px;
+  $sider_width: 100px;
+  .sider {
+    float: right;
+    width: $sider_width;
+    overflow: hidden;
+    ul {
+      list-style: none outside none;
+      padding: 0;
+      li {
+        line-height: 160%;
+      }
+    }
+    a {
+      color: $blue_text;
+      padding: 2px;
+    }
+    a:hover {
+      color: #ffffff;
+      background-color: $blue_text;
+    }
+  }
+  .show, .new {
+    float: left;
+    width: $show_width;
+    margin-right: 10px;
+  }
+  .new {
+    textarea {
+      border: 1px solid $border_color;
+    }
+    textarea.code {
+      padding: 6px;
+      line-height: 160%;
+      width: $show_width - 12px;
+    }
+    select {
+      border: 1px solid $border_color;
+    }
+  }
+  
+}
+
+.footer {
+  text-align: center; 
+  border-top: 1px solid $border_color; 
+  padding: 20px 0; 
+  margin-top: 20px;
+}
+
+/*table style*/
+.list-table {
+  table-layout: fixed;
+  width: 100%;
+  th, td {
+  padding: 6px;}
+  th {
+  text-align: left;}
+  th.action, td.action {
+    text-align: right;
+  }
+}
+
+.time_at {
+  font-size: 12px;
+  color: grey;
+}
+

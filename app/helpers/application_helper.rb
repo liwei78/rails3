@@ -5,4 +5,8 @@ module ApplicationHelper
     _str << SITE_SETTINGS["site_title"]
     _str.join(' - ')
   end
+  
+  def logined?
+    !session[:user_id].nil?
+  end
 end

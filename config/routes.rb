@@ -1,9 +1,15 @@
 Ezuser::Application.routes.draw do
-  resources :sessions, :only => [:new, :create] 
+  resources :contents
+  resources :pads
 
-  get "welcome/index"
+  resources :sessions, :only => [:new, :create] do
+    collection do
+      get 'logout'
+    end
+  end
 
   resources :users
+  resources :tags, :only => [:index, :show] 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

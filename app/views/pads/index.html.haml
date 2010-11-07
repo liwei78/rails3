@@ -1,0 +1,15 @@
+%table.list-table
+  %tr
+    %th{:width=>"60%"} Title
+    %th Name
+  - @pads.each do |pad|
+    %tr
+      %td
+        = link_to pad.title, pad
+      %td
+        = link_to pad.username, user_path(pad.user_id)
+
+%br
+= will_paginate @pads, :previous_label => "&lt;&lt;", :next_label => "&gt;&gt;", :class => "flickr_pagination"
+	  
+

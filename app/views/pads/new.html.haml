@@ -1,0 +1,17 @@
+- content_for :header do
+  = javascript_include_tag :ckeditor
+.pad
+  .new
+    = form_for @pad do |f|
+      %h3 New Pad Title
+      = f.text_field :title, :size => 80
+      = render :partial => "text", :locals => {:position => 1}
+      = render :partial => "code"
+      = render :partial => "text", :locals => {:position => 2}
+      = render :partial => "code"
+      = render :partial => "text", :locals => {:position => 3}
+      = render :partial => "code"
+      = f.submit("Save")
+  = render :partial => "sider"
+  .clearfix
+

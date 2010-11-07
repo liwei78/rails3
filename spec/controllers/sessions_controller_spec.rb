@@ -28,5 +28,18 @@ describe SessionsController do
       response.should render_template(:new)
     end
   end
+  
+  describe 'logout' do
+    before(:each) do
+      @user = Factory(:user)
+      session[:user_id] = @user.id
+    end
+    
+    it "logout" do
+      get :logout
+      session.should be_nil
+      redponse.should redirect_to(new_session_path)
+    end
+  end
 
 end

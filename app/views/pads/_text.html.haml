@@ -1,0 +1,11 @@
+.content
+  %h3.grey 
+    .small.right.normal-font
+      Content Type is
+      = content_type_select_tag
+    Text
+  %div
+    = text_area_tag "text_editor_#{position}"
+    :javascript
+      CKEDITOR.replace( "text_editor_#{position}" );
+  

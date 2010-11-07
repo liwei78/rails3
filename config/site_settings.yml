@@ -1,8 +1,11 @@
 common: &common
-  keywords: "EZUser on Rails3"
-  description: "on dev"
+  keywords: "EZPad,code,collector,writing,translation"
+  description: "code collector, article writing,translation writing"
   author: "Rique Li, hi@liwei.me"
-  site_title: "EZUser on dev"
+  site_title: "EZPad -e development"
+  content_type:  ["code collector", "translation", "original writing", "copy and paste"]
+  code_language: ["ruby", "rails", "python", "java", "c", "c++", "objective-c", "text"]
+  default_tags:  ["ruby", "rails", "rails3", "python", "java", "django", "email"]
   
 development:
   <<: *common
@@ -11,4 +14,4 @@ test:
   <<: *common  
 
 production:
-  site_title: "EZUser on pro"
+  site_title: "EZPad, code collector for you."

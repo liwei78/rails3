@@ -1,0 +1,6 @@
+.sider
+  %ul
+    - for tag in @tags
+      %li
+        %small.right.grey= tag.taggings_count
+        = link_to tag.name, tag_path(tag.name)
