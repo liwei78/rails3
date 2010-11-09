@@ -55,9 +55,11 @@ GEM
       treetop (>= 1.4.5)
     mime-types (1.16)
     nokogiri (1.4.3.1)
+    oniguruma (1.1.0)
     paperclip (2.3.5)
       activerecord
       activesupport
+    plist (3.1.0)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -91,10 +93,15 @@ GEM
     rspec-rails (2.0.1)
       rspec (~> 2.0.0)
     sqlite3-ruby (1.2.5)
+    textpow (0.10.1)
+      oniguruma (>= 1.1.0)
+      plist (>= 3.0.0)
     thor (0.14.2)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    ultraviolet (0.10.2)
+      textpow (>= 0.10.0)
     webrat (0.7.1)
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
@@ -120,6 +127,7 @@ DEPENDENCIES
   rspec
   rspec-rails
   sqlite3-ruby
+  ultraviolet (= 0.10.2)
   webrat
   will_paginate
   wirble

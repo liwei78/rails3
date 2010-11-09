@@ -4,3 +4,7 @@ Factory.define :user do |user|
   user.password "liwei"
   user.password_confirmation "liwei"
 end
+
+Factory.define :tag do |tag|
+  tag.name "ATag"
+end

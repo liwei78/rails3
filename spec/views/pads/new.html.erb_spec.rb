@@ -5,6 +5,7 @@ describe "pads/new.html.erb" do
     assign(:pad, stub_model(Pad,
       :title => "MyString"
     ).as_new_record)
+    @tags = Tag.all
   end
 
   it "renders new pad form" do

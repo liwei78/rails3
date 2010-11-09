@@ -3,8 +3,11 @@
   %head
     %title= seo_title
     %meta{'http-equiv' => "content-type", :content => "text/html; charset=UTF-8"}
-    = stylesheet_link_tag :all
-    = javascript_include_tag :defaults
+    %meta{'name' => "keywords", :content => "#{SITE_SETTINGS["keywords"]}"}
+    %meta{'name' => "description", :content => "#{SITE_SETTINGS["description"]}"}
+    %meta{'name' => "author", :content => "#{SITE_SETTINGS["author"]}"}
+    = stylesheet_link_tag "style", "jquery.jgrowl", "pagination", "syntax/cobalt"
+    = javascript_include_tag :defaults, "jquery.jgrowl"
     = csrf_meta_tag
     = yield :header
   %body
@@ -22,10 +25,12 @@
             %li= link_to "Signup", new_user_path
           .clearfix
   
-      - if flash[:notice]
-        .green= flash[:notice]
-      - if flash[:error]
-        .red= flash[:error]
+      .notice_and_error_div
+        - if flash[:notice]
+          .green#notice_div
+            = flash[:notice]
+        - if flash[:error]
+          .red#error_div= flash[:error]
     
       = yield
       .footer

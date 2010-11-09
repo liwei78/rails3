@@ -1,5 +1,7 @@
 .pad
   .show
     %h2= @pad.title
+    - for content in @contents
+      = render :partial => "#{content.used_for}_plain", :locals => {:content => content}
   = render :partial => "sider"
   .clearfix

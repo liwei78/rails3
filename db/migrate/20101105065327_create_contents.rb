@@ -3,8 +3,9 @@ class CreateContents < ActiveRecord::Migration
     create_table :contents do |t|
       t.text :body
       t.integer :position
-      t.string :code_language
-      t.string :content_type
+      t.string  :used_for, :length => 4      # text or code
+      t.string  :code_language
+      t.string  :content_type
       t.boolean :hide
       t.boolean :deleting
       t.references :user

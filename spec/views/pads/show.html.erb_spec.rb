@@ -5,6 +5,8 @@ describe "pads/show.html.erb" do
     @pad = assign(:pad, stub_model(Pad,
       :title => "Title"
     ))
+    @tags = Tag.all
+    @contents = @pad.contents
   end
 
   it "renders attributes in <p>" do

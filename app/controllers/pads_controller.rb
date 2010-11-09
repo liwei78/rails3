@@ -1,6 +1,6 @@
 class PadsController < ApplicationController
   
-  before_filter :login_required, :only => [:new, :create, :edit, :update]
+  before_filter :login_required, :only => [:new, :create, :update]
   
   # GET /pads
   # GET /pads.xml
@@ -23,6 +23,7 @@ class PadsController < ApplicationController
   # GET /pads/1.xml
   def show
     @pad = Pad.find(params[:id])
+    @contents = @pad.contents
     @tags = Tag.all
 
     respond_to do |format|
@@ -38,7 +39,6 @@ class PadsController < ApplicationController
     @tags = Tag.all
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @pad }
     end
   end
 
@@ -51,15 +51,18 @@ class PadsController < ApplicationController
   # POST /pads.xml
   def create
     @pad = Pad.new(params[:pad])
-
+    @pad.user_id = session[:user_id]
     respond_to do |format|
       if @pad.save
-        format.html { redirect_to(@pad, :notice => 'Pad was successfully created.') }
-        format.xml  { render :xml => @pad, :status => :created, :location => @pad }
+        Content.create([
+          {:pad_id => @pad.id, :body => params[:text_body], :used_for => "text", :position => 1, :user_id => session[:user_id], :content_type => params[:content_type]},
+          {:pad_id => @pad.id, :body => params[:code_body], :used_for => "code", :position => 2, :user_id => session[:user_id], :code_language => params[:code_language]}
+        ])
+        flash[:notice] = "welcome to EZPad, continue edit, and injoy it !!!"
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @pad.errors, :status => :unprocessable_entity }
+        @msg = @pad.errors.full_messages.join(',')
       end
+      format.js
     end
   end
 
@@ -88,6 +91,13 @@ class PadsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(pads_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  def append
+    @content = Content.new(:position => 33)
+    respond_to do |format|
+      format.js
     end
   end
 end

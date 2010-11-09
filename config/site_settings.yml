@@ -3,8 +3,8 @@ common: &common
   description: "code collector, article writing,translation writing"
   author: "Rique Li, hi@liwei.me"
   site_title: "EZPad -e development"
-  content_type:  ["code collector", "translation", "original writing", "copy and paste"]
-  code_language: ["ruby", "rails", "python", "java", "c", "c++", "objective-c", "text"]
+  content_type:  ["code collector", "translation", "writing", "copy and paste"]
+  code_language: ["ruby", "python", "java", "c", "c++", "objective-c", "html", "css", "sql", "text", "yaml"]
   default_tags:  ["ruby", "rails", "rails3", "python", "java", "django", "email"]
   
 development:

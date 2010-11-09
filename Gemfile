@@ -37,6 +37,7 @@ gem 'jquery-rails'
 gem 'gravatar_image_tag'
 gem 'ckeditor', '3.4.2.pre'
 gem 'paperclip'
+gem 'ultraviolet', '0.10.2', :require => "uv"
 
 group :development do
   gem 'wirble'

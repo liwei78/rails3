@@ -33,7 +33,8 @@ ActiveRecord::Schema.define(:version => 20101107140011) do
   create_table "contents", :force => true do |t|
     t.text     "body"
     t.integer  "position"
-    t.string   "language"
+    t.string   "used_for"
+    t.string   "code_language"
     t.string   "content_type"
     t.boolean  "hide"
     t.boolean  "deleting"

@@ -3,6 +3,9 @@ class Pad < ActiveRecord::Base
   
   belongs_to :user
   belongs_to :category
-  has_many :contents
+  has_many :contents, :order => "contents.position asc"
   
+  validates :title, 
+    :presence   => true
+    
 end

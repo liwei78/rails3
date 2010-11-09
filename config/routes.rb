@@ -1,6 +1,11 @@
 Ezuser::Application.routes.draw do
-  resources :contents
-  resources :pads
+  resources :contents, :only => [:create, :update]
+  
+  resources :pads, :except => [:edit] do
+    collection do
+      post 'append'
+    end
+  end
 
   resources :sessions, :only => [:new, :create] do
     collection do

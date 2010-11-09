@@ -6,6 +6,7 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
+puts "seed begin ..."
 for tag in SITE_SETTINGS["default_tags"]
   Tag.create(:name => tag)
 end
@@ -15,3 +16,5 @@ User.create(
   :email => "liwei@123.com", 
   :password => "liwei"
 )
+
+puts "... seed finish"

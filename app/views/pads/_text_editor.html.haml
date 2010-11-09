@@ -1,0 +1,14 @@
+%div{:class => "text", :id => "content_#{content.id}_div"}
+  = form_for content, :remote => true, :html => {:id => "new_content_#{content.id}_form"} do |f|
+    = f.hidden_field :position
+    %h3.grey 
+      .small.right.normal-font
+        Content Type is
+        = content_type_select_tag
+        = nbsp(2)
+        = link_to "del", js_void, :onclick => "slideup_and_remove('#content_#{content.id}_div')"
+      Text
+    %div
+      = f.text_area :body, :name => "text_editor_#{content.id}"
+      :javascript
+        CKEDITOR.replace( "text_editor_#{content.id}" );

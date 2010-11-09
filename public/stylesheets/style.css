@@ -14,11 +14,6 @@ body {
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif; }
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px; }
-
 a {
   text-decoration: none; }
 
@@ -69,15 +64,22 @@ h1, h2, h3 {
 div.field, div.actions {
   margin-bottom: 10px; }
 
-.error {
-  color: red;
-  text-align: center;
-  margin: 10px 0; }
+.notice_and_error_div {
+  margin: 5px 0;
+  height: 30px;
+  text-align: center; }
 
-.notice {
+#error_div {
+  color: red;
+  /*  display: none;*/
+  height: 30px;
+  line-height: 30px; }
+
+#notice_div {
   color: green;
-  text-align: center;
-  margin: 10px 0; }
+  /*  display: none;*/
+  height: 30px;
+  line-height: 30px; }
 
 .field_with_errors {
   padding: 2px;
@@ -185,14 +187,26 @@ div.field, div.actions {
   float: left;
   width: 870px;
   margin-right: 10px; }
-.pad .new textarea {
-  border: 1px solid #dddddd; }
-.pad .new textarea.code {
-  padding: 6px;
-  line-height: 160%;
-  width: 858px; }
-.pad .new select {
-  border: 1px solid #dddddd; }
+  .pad .show textarea, .pad .new textarea {
+    border: 1px solid #dddddd; }
+  .pad .show textarea.code, .pad .new textarea.code {
+    padding: 6px;
+    line-height: 160%;
+    width: 858px; }
+  .pad .show select, .pad .new select {
+    border: 1px solid #dddddd; }
+  .pad .show 。code_plain, .pad .new 。code_plain {
+    font-size: 14px; }
+  .pad .show .text p, .pad .new .text p {
+    margin: 5px 0 15px 0;
+    padding: 0; }
+.pad .dashboard {
+  margin-top: 10px; }
+  .pad .dashboard a {
+    color: #ff0084; }
+  .pad .dashboard a:hover {
+    color: #FFFFFF;
+    background-color: #ff0084; }
 
 .footer {
   text-align: center;

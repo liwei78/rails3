@@ -15,10 +15,6 @@ describe PadsController do
       { :get => "/pads/1" }.should route_to(:controller => "pads", :action => "show", :id => "1")
     end
 
-    it "recognizes and generates #edit" do
-      { :get => "/pads/1/edit" }.should route_to(:controller => "pads", :action => "edit", :id => "1")
-    end
-
     it "recognizes and generates #create" do
       { :post => "/pads" }.should route_to(:controller => "pads", :action => "create")
     end

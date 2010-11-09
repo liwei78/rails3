@@ -37,8 +37,8 @@ describe SessionsController do
     
     it "logout" do
       get :logout
-      session.should be_nil
-      redponse.should redirect_to(new_session_path)
+      session[:user_id].should be_nil
+      response.should redirect_to(root_path)
     end
   end
 

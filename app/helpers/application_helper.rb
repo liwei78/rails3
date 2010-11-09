@@ -9,4 +9,13 @@ module ApplicationHelper
   def logined?
     !session[:user_id].nil?
   end
+  
+  def js_void
+    "javascript:void(0);"
+  end
+  
+  def nbsp(n=4)
+    raw "&nbsp;"*n
+  end
+  
 end

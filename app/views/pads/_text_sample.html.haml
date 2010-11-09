@@ -1,0 +1,10 @@
+%div
+  %h3.grey 
+    .small.right.normal-font
+      Content Type is
+      = content_type_select_tag
+    Text
+  %div
+    = text_area_tag :text_body, "it's a text sample <br /> you can input your content, or press 'OK', we will shou you more functions. funny."
+    :javascript
+      CKEDITOR.replace( "text_body" );

@@ -1,0 +1,9 @@
+%div{:class => "code", :id => "content_#{content.id}_div"}
+  = form_for content, :remote => true, :html => {:id => "content_#{content.id}_form"} do |f|
+    = f.hidden_field :position
+    %h3.grey
+      .small.right.normal-font
+        Code Language is
+        = code_language_select_tag
+      Code
+    %div= f.text_area :body, :cols => 60, :rows => 5, :class => "code"
