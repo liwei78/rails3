@@ -4,7 +4,7 @@ common: &common
   author: "Rique Li, hi@liwei.me"
   site_title: "EZPad -e development"
   content_type:  ["code collector", "translation", "writing", "copy and paste"]
-  code_language: ["ruby", "python", "java", "c", "c++", "objective-c", "html", "css", "sql", "text", "yaml"]
+  code_language: ["ruby", "python", "java", "c", "c++", "objective-c", "html", "css", "sql", "javascript", "text", "yaml"]
   default_tags:  ["ruby", "rails", "rails3", "python", "java", "django", "email"]
   
 development:

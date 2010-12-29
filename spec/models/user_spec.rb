@@ -57,6 +57,11 @@ describe User do
 
   end
   
+  describe "update user's profile" do
+    it "update with blank password"
+  end
+  
+  
   
   private
   
